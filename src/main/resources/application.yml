@@ -1,0 +1,24 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: ["out/production"]
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/allinone?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 11111
+server:
+  port: 8088
+  servlet:
+    context-path: /Demo
+    session:
+      timeout: 30m
+mybatis:
+  #config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/**.xml
+  type-aliases-package: me.macd.springbootdemo.pojo
+  configuration:
+    use-generated-keys: true
+    use-column-label: true
+    map-underscore-to-camel-case: true
