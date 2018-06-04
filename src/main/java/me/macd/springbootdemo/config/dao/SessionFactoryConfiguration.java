@@ -7,6 +7,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import java.io.IOException;
 
+@Deprecated
 //@Configuration
 public class SessionFactoryConfiguration {
 

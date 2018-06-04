@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.beans.PropertyVetoException;
 
+@Deprecated
 //@Configuration
 //@MapperScan("me.macd.springbootdemo.dao")
 public class DataSourceConfiguration {
