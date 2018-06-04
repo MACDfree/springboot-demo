@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@MapperScan(basePackages = "me.macd.springbootdemo.dao")
+@MapperScan(basePackages = "me.macd.springbootdemo.mapper")
 @ComponentScan(basePackages = {"me.macd.springbootdemo"})
 public class SpringbootDemoApplication {
 

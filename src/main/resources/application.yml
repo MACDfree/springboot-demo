@@ -11,13 +11,13 @@ spring:
 server:
   port: 8088
   servlet:
-    context-path: /Demo
+    context-path: /demo
     session:
       timeout: 30m
 mybatis:
   #config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:mapper/**.xml
-  type-aliases-package: me.macd.springbootdemo.pojo
+  type-aliases-package: me.macd.springbootdemo.model
   configuration:
     use-generated-keys: true
     use-column-label: true
