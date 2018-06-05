@@ -22,3 +22,7 @@ mybatis:
     use-generated-keys: true
     use-column-label: true
     map-underscore-to-camel-case: true
+shiro:
+  loginUrl:
+  unauthorizedUrl:
+  successUrl:
