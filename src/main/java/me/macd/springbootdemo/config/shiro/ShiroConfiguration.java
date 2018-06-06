@@ -24,7 +24,7 @@ public class ShiroConfiguration {
         chainDefinition.addPathDefinition("/docs/**", "authc, perms[document:read]");
 
         // all other paths require a logged in user
-        chainDefinition.addPathDefinition("/**", "authc");
+        chainDefinition.addPathDefinition("/**", "anon");
         return chainDefinition;
     }
 }
