@@ -4,6 +4,7 @@ import me.macd.springbootdemo.model.User;
 
 public interface UserService {
     User findUserById(Integer id);
-    Integer saveUser(User user);
+    int addUser(User user);
     User findUserByUserName(String userName);
+    boolean isExistUserName(String userName);
 }

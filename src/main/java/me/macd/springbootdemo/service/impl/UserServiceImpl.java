@@ -25,7 +25,10 @@ public class UserServiceImpl implements UserService {
     @Override
     // 事务传播中REQUIRED表示：如果已有事务，则加入此事务；如果没有事务，则新起一个事务执行。一般insert、update、delete操作使用
     @Transactional(propagation = Propagation.REQUIRED)
-    public Integer saveUser(User user) {
+    public int addUser(User user) {
+        if (isExistUserName(user.getUsername())) {
+            throw new RuntimeException("此用户已存在");
+        }
         return userMapper.insertSelective(user);
     }
 
@@ -35,5 +38,13 @@ public class UserServiceImpl implements UserService {
         UserExample userExample = new UserExample();
         userExample.createCriteria().andUsernameEqualTo(userName);
         return userMapper.selectByExample(userExample).get(0);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public boolean isExistUserName(String userName) {
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andUsernameEqualTo(userName);
+        return userMapper.countByExample(userExample) != 0;
     }
 }

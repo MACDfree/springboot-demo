@@ -8,15 +8,15 @@ public class Result extends HashMap<String, Object> {
     Result() {
     }
 
-    static Result ok(Object data) {
+    public static Result ok(Object data) {
         return ret(2000, "", data);
     }
 
-    static Result ok() {
+    public static Result ok() {
         return ret(2000, "", null);
     }
 
-    static Result error(Integer code, String msg) {
+    public static Result error(Integer code, String msg) {
         return ret(code, msg, null);
     }
 
