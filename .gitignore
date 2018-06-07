@@ -25,3 +25,12 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### js ###
+.DS_Store
+front/node_modules/
+front/dist/
+front/npm-debug.log*
+front/yarn-debug.log*
+front/yarn-error.log*
+front/package-lock.json
