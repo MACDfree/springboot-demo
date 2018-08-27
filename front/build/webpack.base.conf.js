@@ -35,6 +35,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+      // 方便写import，例如import HelloWorld from '@/components/HelloWorld'
       '@': resolve('src'),
     }
   },

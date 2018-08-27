@@ -12,9 +12,11 @@ const webpack = require('webpack')
 const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
 
+// 在终端显示loading效果，类似转圈圈
 const spinner = ora('building for production...')
 spinner.start()
 
+// rimraf类似rm -rf命令删除指定文件或文件夹
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
   webpack(webpackConfig, (err, stats) => {
