@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import static org.springframework.web.cors.CorsConfiguration.ALL;
+
 @Configuration
 public class CORSConfiguration {
     @Bean
@@ -12,10 +14,12 @@ public class CORSConfiguration {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
+                // 允许跨域请求
                 registry.addMapping("/**")
-                        .allowedHeaders("*")
-                        .allowedMethods("*")
-                        .allowedOrigins("*");
+                        .allowedHeaders(ALL)
+                        .allowedMethods(ALL)
+                        .allowedOrigins(ALL)
+                        .allowCredentials(true);
             }
         };
     }
